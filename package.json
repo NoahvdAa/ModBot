@@ -1,0 +1,24 @@
+{
+  "name": "modbot",
+  "version": "1.0.0",
+  "description": "A simple discord moderation bot featuring keyword based kicks/bans, punishment history and more! ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahvdAa/ModBot.git"
+  },
+  "author": "NoahvdAa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoahvdAa/ModBot/issues"
+  },
+  "homepage": "https://github.com/NoahvdAa/ModBot#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "knex": "^0.95.10",
+    "mysql2": "^2.3.0"
+  }
+}

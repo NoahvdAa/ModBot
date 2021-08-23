@@ -1,0 +1,20 @@
+{
+	"bot_token": "",
+	"prefix": "?",
+	"staff_logs_channel": "logchannelid",
+	"welcome_goodbye_channel": "welcomechannelid",
+	"database_host": "localhost",
+	"database_user": "root",
+	"database_password": "root",
+	"database_name": "modbot",
+	"autopunish": [
+		{
+			"type": "warn",
+			"delete": true,
+			"reason": "Nitro Scam",
+			"regex_triggers": [
+				"Free nitro @ https://google.com/nitro"
+			]
+		}
+	]
+}
