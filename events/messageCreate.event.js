@@ -7,7 +7,7 @@ module.exports = (client, message) => {
 	}
 
 	// Automod!
-	client.config.autopunish.forEach(async autoPunishment => {
+	client.config.autopunish.forEach(async (autoPunishment) => {
 		// Staff won't match this.
 		if (autoPunishment.staff_bypass && message.member.permissions.has('MANAGE_MESSAGES')) {
 			return;
@@ -44,7 +44,9 @@ module.exports = (client, message) => {
 		}
 	});
 
-	if (message.content.indexOf(client.config.prefix) !== 0) return;
+	if (message.content.indexOf(client.config.prefix) !== 0) {
+		return;
+	}
 
 	const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
@@ -52,7 +54,9 @@ module.exports = (client, message) => {
 	const cmd = client.commands.get(command);
 
 	// If that command doesn't exist, silently exit and do nothing.
-	if (!cmd) return;
+	if (!cmd) {
+		return;
+	}
 
 	// Run the command.
 	cmd.run(client, message, args);

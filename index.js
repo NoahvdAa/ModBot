@@ -38,9 +38,13 @@ client.knex.raw('CREATE TABLE IF NOT EXISTS `punishment_history` ( `id` INT NOT 
 
 // Load events.
 fs.readdir('./events/', (err, files) => {
-	if (err) return console.error(err);
-	files.forEach(file => {
-		if (!file.endsWith('.event.js')) return;
+	if (err) {
+		return console.error(err);
+	}
+	files.forEach((file) => {
+		if (!file.endsWith('.event.js')) {
+			return;
+		}
 		const event = require(`./events/${file}`);
 		let eventName = file.split('.')[0];
 		console.log(`Loaded event: ${eventName}.`);
@@ -53,9 +57,13 @@ client.commands = new Collection();
 
 // Load commands.
 fs.readdir('./commands/', (err, files) => {
-	if (err) return console.error(err);
-	files.forEach(file => {
-		if (!file.endsWith('.command.js')) return;
+	if (err) {
+		return console.error(err);
+	}
+	files.forEach((file) => {
+		if (!file.endsWith('.command.js')) {
+			return;
+		}
 		let props = require(`./commands/${file}`);
 		let commandName = file.split('.')[0];
 		console.log(`Loaded command: ${commandName}.`);
