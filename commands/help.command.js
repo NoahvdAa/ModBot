@@ -14,4 +14,4 @@ module.exports.run = (client, message, args) => {
 		.setTimestamp(new Date());
 
 	message.reply({ embeds: [embed] });
-}
+};

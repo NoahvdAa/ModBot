@@ -87,7 +87,7 @@ const punishmentExecutions = {
 
 		waitingMsg.edit({ embeds: [GenericSuccessEmbed(moderator, 'User warned!', `:raised_hands: \`${target.user.tag} (${target.id})\` has been warned: \`${reason}\`! [punished ${previousPunishmentsCount} time${previousPunishmentsCount === 1 ? '' : 's'}, of which ${previousWarnsCount} warning${previousWarnsCount === 1 ? '' : 's'}]`)] });
 	}
-}
+};
 
 Object.freeze(punishmentExecutions);
 

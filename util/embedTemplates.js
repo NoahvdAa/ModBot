@@ -37,7 +37,7 @@ const embeds = {
 	NoPermissionsEmbed: (author) => {
 		return embeds.GenericErrorEmbed(author, 'Not enough permissions!', `You don't have enough permissions to use this command!`);
 	}
-}
+};
 
 Object.freeze(embeds);
 

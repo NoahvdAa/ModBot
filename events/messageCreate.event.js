@@ -2,12 +2,16 @@ const { ban, kick, warn } = require('../util/punishmentExecutions.js');
 
 module.exports = (client, message) => {
 	// Ignore all bots.
-	if (message.author.bot) return;
+	if (message.author.bot) {
+		return;
+	}
 
 	// Automod!
 	client.config.autopunish.forEach(async autoPunishment => {
 		// Staff won't match this.
-		if (autoPunishment.staff_bypass && message.member.permissions.has('MANAGE_MESSAGES')) return;
+		if (autoPunishment.staff_bypass && message.member.permissions.has('MANAGE_MESSAGES')) {
+			return;
+		}
 
 		var matched = false;
 		autoPunishment.regex_triggers.forEach(trigger => {
@@ -16,9 +20,13 @@ module.exports = (client, message) => {
 		});
 
 		// No match!
-		if (!matched) return;
+		if (!matched) {
+			return;
+		}
 
-		if (autoPunishment.delete) await message.delete();
+		if (autoPunishment.delete) {
+			await message.delete();
+		}
 
 		switch (autoPunishment.type) {
 			case 'none':
