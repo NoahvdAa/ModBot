@@ -6,6 +6,9 @@ module.exports = (client, message) => {
 
 	// Automod!
 	client.config.autopunish.forEach(async autoPunishment => {
+		// Staff won't match this.
+		if (autoPunishment.staff_bypass && message.member.permissions.has('MANAGE_MESSAGES')) return;
+
 		var matched = false;
 		autoPunishment.regex_triggers.forEach(trigger => {
 			if (new RegExp(trigger).test(message.content))

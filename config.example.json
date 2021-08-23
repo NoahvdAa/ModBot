@@ -11,6 +11,7 @@
 		{
 			"type": "warn",
 			"delete": true,
+			"staff_bypass": true,
 			"reason": "Nitro Scam",
 			"regex_triggers": [
 				"Free nitro @ https://google.com/nitro"
