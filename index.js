@@ -1,6 +1,8 @@
 const { Client, Collection } = require('discord.js');
 const fs = require('fs');
 
+const config = require('./config.json');;
+
 const client = new Client({
 	intents: [
 		'GUILDS',
@@ -11,7 +13,7 @@ const client = new Client({
 		status: 'dnd',
 		activities: [
 			{
-				name: 'SpelSpeler | ?help',
+				name: `${config.prefix}help`,
 				type: 'WATCHING'
 			}
 		]
@@ -19,7 +21,7 @@ const client = new Client({
 });
 
 // Load config.
-client.config = require('./config.json');
+client.config = config;
 
 // Database connection.
 client.knex = require('knex')({
